@@ -30,21 +30,19 @@ Rotate clockwise
 Write the robots position and direction to the console
 
 ## Example inputs
-### a
-PLACE 0,0,NORTH
-MOVE
-REPORT
 
-### b
-PLACE 0,0,NORTH
-LEFT
-REPORT
+PLACE 0,0,NORTH <br />
+MOVE <br />
+REPORT <br />
 
-### c
-PLACE 1,2,EAST
-MOVE
-MOVE
-LEFT
-MOVE
-REPORT
+PLACE 0,0,NORTH <br />
+LEFT <br />
+REPORT <br />
+
+PLACE 1,2,EAST <br />
+MOVE <br />
+MOVE <br />
+LEFT <br />
+MOVE <br />
+REPORT <br />
 

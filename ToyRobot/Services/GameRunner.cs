@@ -34,6 +34,12 @@ namespace ToyRobot.Services
             try
             {
                 var input = _inputGetter.GetNextInput();
+
+                if(input == null || input.Trim() == string.Empty)
+                {
+                    return;
+                }
+
                 var command = _inputParser.ParseInput(input);
 
                 _gameManager.ExecuteCommand(command);

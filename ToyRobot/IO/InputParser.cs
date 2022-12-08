@@ -7,12 +7,14 @@ namespace ToyRobot.IO
     {
         public Command ParseInput(string input)
         {
+            input = input.Trim();
+
             if (input.StartsWith("PLACE", StringComparison.InvariantCultureIgnoreCase))
             {
                 return ParsePlaceCommand(input);
             }
 
-            return input.Trim().ToUpperInvariant() switch
+            return input.ToUpperInvariant() switch
             {
                 "MOVE" => new Command() { Type = CommandType.Move },
                 "REPORT" => new Command() { Type = CommandType.Report },

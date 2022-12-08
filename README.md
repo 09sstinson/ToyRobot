@@ -46,3 +46,7 @@ LEFT <br />
 MOVE <br />
 REPORT <br />
 
+# Improvements
+- I have not added tests to all classes yet.
+- Not all test cases are covered
+- Probably want to add a condition so that the game will end at somepoint, this would also help with the testing off the run method in the game runner

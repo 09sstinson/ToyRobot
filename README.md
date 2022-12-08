@@ -4,9 +4,9 @@ Welcome to my Toy Robot game
 
 ## To Run
 - Ensure .Net 7 SDK is installed
-- Run dotnet build at project root
-- Cd to ToyRobot/bin/Debug/net7.0/
-- Run start ToyRobot.exe
+- Run `dotnet build` at project root
+- cd to `ToyRobot/bin/Debug/net7.0/`
+- Run `start ToyRobot.exe`
 
 ## Commands
 

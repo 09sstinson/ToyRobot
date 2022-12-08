@@ -66,11 +66,10 @@ namespace ToyRobot.IO
 
         private static Direction ParseDirection(string input)
         {
-            try
+            if(Enum.TryParse(input, out Direction direction))
             {
-                return (Direction)Enum.Parse(typeof(Direction), input.ToUpperInvariant());
-            }
-            catch
+                return direction;
+            } else
             {
                 throw new ParsingException(input, typeof(Direction));
             }

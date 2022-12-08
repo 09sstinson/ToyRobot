@@ -6,7 +6,7 @@ using ToyRobot.Services;
 
 namespace ToyRobot.UnitTests
 {
-    public class GameManagerTests
+    public class CommandExecutorTests
     {
         private readonly Mock<IOutputWriter> _outputWriter = new();
         private readonly Mock<IRobot> _robot = new();
@@ -14,7 +14,7 @@ namespace ToyRobot.UnitTests
         private readonly Position _startingPosition = new(0,0);
         private readonly CommandExecutor _sut;
 
-        public GameManagerTests()
+        public CommandExecutorTests()
         {
             _sut = new CommandExecutor(_outputWriter.Object, _robot.Object, _board.Object);
         }

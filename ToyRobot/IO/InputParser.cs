@@ -66,7 +66,7 @@ namespace ToyRobot.IO
 
         private static Direction ParseDirection(string input)
         {
-            if(Enum.TryParse(input, out Direction direction))
+            if(Enum.TryParse(input, ignoreCase: true, out Direction direction))
             {
                 return direction;
             } else

@@ -26,7 +26,7 @@ namespace ToyRobot.IntegrationTests
                 "report",
             };
 
-            var sut = new GameRunner(_gameManager, new InputParser(), new InputGetterFake(inputs.GetEnumerator()), _outputWriter.Object);
+            var sut = GetSut(inputs);
 
             inputs.ForEach(x => sut.PerformGameLoop());
 
@@ -42,7 +42,7 @@ namespace ToyRobot.IntegrationTests
                 "move",
             };
 
-            var sut = new GameRunner(_gameManager, new InputParser(), new InputGetterFake(inputs.GetEnumerator()), _outputWriter.Object);
+            var sut = GetSut(inputs);
 
             inputs.ForEach(x => sut.PerformGameLoop());
 
@@ -58,7 +58,7 @@ namespace ToyRobot.IntegrationTests
                 "place 1,test,North",
             };
 
-            var sut = new GameRunner(_gameManager, new InputParser(), new InputGetterFake(inputs.GetEnumerator()), _outputWriter.Object);
+            var sut = GetSut(inputs);
 
             inputs.ForEach(x => sut.PerformGameLoop());
 
@@ -74,7 +74,7 @@ namespace ToyRobot.IntegrationTests
                 "place 1,test,North, random extra stuff",
             };
 
-            var sut = new GameRunner(_gameManager, new InputParser(), new InputGetterFake(inputs.GetEnumerator()), _outputWriter.Object);
+            var sut = GetSut(inputs);
 
             inputs.ForEach(x => sut.PerformGameLoop());
 
@@ -90,7 +90,7 @@ namespace ToyRobot.IntegrationTests
                 "notarealcommand",
             };
 
-            var sut = new GameRunner(_gameManager, new InputParser(), new InputGetterFake(inputs.GetEnumerator()), _outputWriter.Object);
+            var sut = GetSut(inputs);
 
             inputs.ForEach(x => sut.PerformGameLoop());
 
@@ -106,7 +106,7 @@ namespace ToyRobot.IntegrationTests
                 "place 6,6,north",
             };
 
-            var sut = new GameRunner(_gameManager, new InputParser(), new InputGetterFake(inputs.GetEnumerator()), _outputWriter.Object);
+            var sut = GetSut(inputs);
 
             inputs.ForEach(x => sut.PerformGameLoop());
 
@@ -123,7 +123,7 @@ namespace ToyRobot.IntegrationTests
                 "move",
             };
 
-            var sut = new GameRunner(_gameManager, new InputParser(), new InputGetterFake(inputs.GetEnumerator()), _outputWriter.Object);
+            var sut = GetSut(inputs);
 
             inputs.ForEach(x => sut.PerformGameLoop());
 
@@ -141,7 +141,7 @@ namespace ToyRobot.IntegrationTests
                 "report",
             };
 
-            var sut = new GameRunner(_gameManager, new InputParser(), new InputGetterFake(inputs.GetEnumerator()), _outputWriter.Object);
+            var sut = GetSut(inputs);
 
             inputs.ForEach(x => sut.PerformGameLoop());
 
@@ -161,7 +161,7 @@ namespace ToyRobot.IntegrationTests
                 "report"
             };
 
-            var sut = new GameRunner(_gameManager, new InputParser(), new InputGetterFake(inputs.GetEnumerator()), _outputWriter.Object);
+            var sut = GetSut(inputs);
 
             inputs.ForEach(x => sut.PerformGameLoop());
 
@@ -185,12 +185,17 @@ namespace ToyRobot.IntegrationTests
                 "report",
             };
 
-            var sut = new GameRunner(_gameManager, new InputParser(), new InputGetterFake(inputs.GetEnumerator()), _outputWriter.Object);
+            var sut = GetSut(inputs);
 
             inputs.ForEach(x => sut.PerformGameLoop());
 
             Assert.Equal(2, _outputCapture.Count);
             Assert.Equal(new List<string>() { "2, 4, EAST", "2, 1, SOUTH" }, _outputCapture);
+        }
+
+        private GameRunner GetSut(List<string> inputs)
+        {
+            return new GameRunner(_gameManager, new InputParser(), new InputGetterFake(inputs.GetEnumerator()), _outputWriter.Object);
         }
     }
 
